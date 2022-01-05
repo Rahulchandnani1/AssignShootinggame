@@ -35,7 +35,8 @@ width:100px;
 top:100px;
 left:300px;
 }
-#score{height:130px;}
+#score{height:300px;
+width:170px;}
 #rules{
 position:absolute;
 top:0px;
@@ -68,8 +69,6 @@ background-image: linear-gradient(to right, red,orange);;
 
 
 
-</div>
-
 <script>
 
 
@@ -86,16 +85,26 @@ var player1=100;
 var ran=getR(0,5);
 var run=getR(0,5);
 var player2=100;
+var sc1=0;
+var sc2=0;
 
 while(player1>0){player1=player1-ran;
 player2=player2-run;
 
 
 if(player1<=0){
-
-document.getElementById("score").innerHTML ="Player 2 :1 Player 1:0"+" "+"Player2 health:"+player2;
+sc2=sc2+1;
+if(sc2>=3){
+document.getElementById("score").innerHTML="Player2 Wons the match"+"<br>";}
+else{
+document.getElementById("score").innerHTML ="Player2 won "+"<br>"+"Player1 lose"+"<br>"+"Player2 health:"+player2;}
 }
-if(player2<=0){document.getElementById("score").innerHTML ="Player 1 :1 Player 2:0"+" "+"Player1 health:"+player1; }}
+if(player2<=0){sc1=sc1+1;
+if(sc1>=3){
+document.getElementById("score").innerHTML="Player1 Wons the match"+"<br>";
+}
+else{
+document.getElementById("score").innerHTML ="Player 1 won"+"<br>"+"Player2 lose"+"<br>"+"Player1 health:"+player1;} }}
 
 
 }
